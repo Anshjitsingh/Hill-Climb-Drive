@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hill Drive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MENU PRINCIPALE -->
+    <div id="menu" class="screen">
+        <div class="menu-box">
+            <h1>HILL DRIVE</h1>
+            <p class="subtitle">Infinite Adventure</p>
+
+            <button id="startBtn">▶ START</button>
+            <button id="worldBtn">🌍 MONDI</button>
+            <button id="settingsBtn">⚙ IMPOSTAZIONI</button>
+
+            <div class="save-info">
+                🪙 Monete salvate: <span id="menuCoins">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MONDI -->
+    <div id="worldMenu" class="screen hidden">
+        <div class="menu-box">
+            <h2>SCEGLI IL MONDO</h2>
+
+            <button class="world-choice" data-world="day">☀️ Giorno</button>
+            <button class="world-choice" data-world="night">🌙 Notte</button>
+            <button class="world-choice" data-world="evening">🌅 Sera</button>
+            <button class="world-choice" data-world="spring">🌸 Primavera</button>
+            <button class="world-choice" data-world="summer">☀️ Estate</button>
+            <button class="world-choice" data-world="winter">❄️ Inverno</button>
+
+            <button id="worldBack">← INDIETRO</button>
+        </div>
+    </div>
+
+    <!-- IMPOSTAZIONI -->
+    <div id="settingsMenu" class="screen hidden">
+        <div class="menu-box">
+            <h2>IMPOSTAZIONI</h2>
+
+            <label>
+                Volume
+                <input id="volume" type="range" min="0" max="100" value="50">
+            </label>
+
+            <label class="check">
+                <input id="particles" type="checkbox" checked>
+                Particelle
+            </label>
+
+            <button id="resetSave">🗑 CANCELLA SALVATAGGIO</button>
+            <button id="settingsBack">← INDIETRO</button>
+        </div>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading" class="screen hidden">
+        <div class="loading-box">
+            <h1>LOADING...</h1>
+            <div class="loading-bar">
+                <div id="loadingProgress"></div>
+            </div>
+            <p>Preparazione del mondo...</p>
+        </div>
+    </div>
+
+    <!-- GIOCO -->
+    <div id="game" class="hidden">
+
+        <canvas id="canvas"></canvas>
+
+        <div id="hud">
+            <div class="hud-item">
+                🪙 <span id="coins">0</span>
+            </div>
+
+            <div class="hud-item">
+                ⛽ <span id="fuel">100</span>%
+            </div>
+
+            <div class="hud-item">
+                🏁 <span id="distance">0</span> m
+            </div>
+        </div>
+
+        <div id="worldName">☀️ Giorno</div>
+
+        <button id="pauseBtn">Ⅱ</button>
+
+        <div id="controls">
+            <button id="leftBtn">◀</button>
+            <button id="brakeBtn">▼</button>
+            <button id="rightBtn">▶</button>
+        </div>
+
+        <div id="pauseMenu" class="overlay hidden">
+            <div class="pause-box">
+                <h2>PAUSA</h2>
+                <button id="resumeBtn">▶ RIPRENDI</button>
+                <button id="menuBtn">⌂ MENU</button>
+            </div>
+        </div>
+
+        <div id="gameOver" class="overlay hidden">
+            <div class="pause-box">
+                <h2>CARBURANTE FINITO</h2>
+                <p>Hai percorso <span id="finalDistance">0</span> metri.</p>
+                <button id="retryBtn">↻ RIPROVA</button>
+                <button id="gameOverMenu">⌂ MENU</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
