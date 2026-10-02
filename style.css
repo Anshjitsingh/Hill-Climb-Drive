@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* MENU */
+
+.screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at center, #304b6e, #111827 70%);
+    z-index: 20;
+}
+
+.menu-box {
+    width: min(430px, 90%);
+    padding: 40px 30px;
+    text-align: center;
+    background: rgba(10, 15, 25, .88);
+    border: 2px solid rgba(255,255,255,.15);
+    border-radius: 25px;
+    box-shadow: 0 20px 70px rgba(0,0,0,.6);
+}
+
+h1 {
+    font-size: 48px;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+    color: #ffd23f;
+    text-shadow: 0 5px 20px rgba(255,210,63,.3);
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.menu-box button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 16px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff9f1c, #ff6b00);
+    transition: .15s;
+}
+
+.menu-box button:hover {
+    transform: scale(1.03);
+    filter: brightness(1.15);
+}
+
+.world-choice {
+    background: linear-gradient(135deg, #3478db, #2452a4) !important;
+}
+
+.save-info {
+    margin-top: 25px;
+    color: #aaa;
+}
+
+/* LOADING */
+
+.loading-box {
+    width: min(450px, 85%);
+    text-align: center;
+}
+
+.loading-box h1 {
+    margin-bottom: 25px;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 18px;
+    background: #222;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#loadingProgress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff9f1c, #ffe066);
+    transition: width .1s;
+}
+
+/* GAME */
+
+#game {
+    position: fixed;
+    inset: 0;
+}
+
+canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#hud {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.hud-item {
+    background: rgba(0,0,0,.65);
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 17px;
+    backdrop-filter: blur(5px);
+}
+
+#worldName {
+    position: absolute;
+    top: 18px;
+    right: 75px;
+    background: rgba(0,0,0,.6);
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+#pauseBtn {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: rgba(0,0,0,.7);
+}
+
+/* CONTROLLI */
+
+#controls {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+#controls button {
+    width: 75px;
+    height: 60px;
+    border-radius: 18px;
+    background: rgba(0,0,0,.65);
+    border: 2px solid rgba(255,255,255,.2);
+    font-size: 25px;
+}
+
+#controls button:active {
+    transform: scale(.9);
+}
+
+/* OVERLAY */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.pause-box {
+    width: min(400px, 90%);
+    padding: 35px;
+    text-align: center;
+    background: #111827;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px #000;
+}
+
+.pause-box button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #ff8c00;
+}
+
+label {
+    display: block;
+    margin: 20px 0;
+    color: #ddd;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.check {
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    #hud {
+        flex-direction: column;
+    }
+
+    #worldName {
+        display: none;
+    }
+
+    #controls button {
+        width: 65px;
+        height: 55px;
+    }
+}
